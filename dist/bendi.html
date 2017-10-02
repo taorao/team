@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+//创建本地数据库
+var db=openDatabase("myDB","1.0","test db",2014*10); //创建数据库对象； 数据库名称：myDB， 版本：1.0， 数据库的描述：test db，数据库的大小：2014*10
+function Add(){
+db.transaction(function(fx){
+fx.executeSql("create table if not exists UserInfor(UserName TEXT,Pwd TEXT)",[]); //创建一个表，传参（传值），回调函数（执行成功后，可不写），回调函数（执行失败后，可不写）
+var username=$("#txtAUserName").val();
+var pwd=$("#txtPwd").val();
+// 添加
+if(username=="" || pwd==""){
+alert("不能为空")
+}else{
+fx.executeSql("insert into UserInfor values(?,?)",[username,pwd],function(){
+alert("添加成功")
+});
+}
+
+});
+}
+
+// 查询
+function Sel(){
+var sql="select * from UserInfor where 1=1"; //加where 1=1的目的，加上的话，不管下面if成不成立，这条执行语句都成立
+var username=$("#txtSUserName").val();
+if(username!=""){
+sql += " and UserName='" + username +"'"; //例：username=aaaa select * from UserInfor where 1=1 and UserName='aaaa'
+// console.log(sql)
+}
+db.transaction(function (fx) { //查询所有数据
+$("#dCon").html("");
+fx.executeSql(sql,[], function (fx,rs) {
+for(var i=0;i< rs.rows.length;i++){
+    if(username===rs.rows.item(i).UserName){
+              alert("已经注册")   
+                    }else{
+                        alert("该号码尚未注册请先注册")
+                    }
+//  var s="<div>"+rs.rows.item(i).UserName+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+rs.rows.item(i).Pwd+"</div>";
+//  $("#dCon").append(s);
+}
+});
+});
+}
+
+// 删除
+function Del(){
+db.transaction(function(fx){
+var username=$("#txtDUserName").val();
+fx.executeSql("delete from UserInfor where UserName=?",[username], function() {
+alert("删除成功");
+Sel();
+});
+})
+}
+
+
+// 删除所有数据
+function DelAll(){
+db.transaction(function(fx){
+// var sql=$("#txtKUserName").val();
+fx.executeSql("delete from UserInfor",[],function(){
+alert("删除库成功");
+})
+});
+}
+
+
+</script>
+<title></title>
+</head>
+<body>
+<div><input type="text" id="txtAUserName"><input type="password" id="txtPwd"><input type="button" value="添加" onclick="Add()"> </div>
+<div><input type="text" id="txtSUserName"><input type="button" value="查询" onclick="Sel()"></div>
+<div><input type="text" id="txtDUserName"><input type="button" value="删除" onclick="Del()"></div>
+<div><input type="text" id="txtKUserName"><input type="button" value="删除数据库" onclick="DelAll()"></div>
+<div id="dCon"></div>
+</body>
+</html>

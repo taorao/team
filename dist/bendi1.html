@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+   
+</head>
+<body>
+    <div>
+        <input type="text" id="txtUserName">
+        <input type="password" id="txtpwd">
+        <input type="button" value="按钮" onclick="Add()">
+        <button onclick="Sel()">下一步</button>
+    </div>
+    <script>
+            var db=openDatabase("myDB","1.0","test db",2014*10); //创建数据库对象； 数据库名称：myDB， 版本：1.0， 数据库的描述：test db，数据库的大小：2014*10
+            function Add(){
+            db.transaction(function(fx){
+            fx.executeSql("create table if not exists UserInfor(UserName TEXT,Pwd TEXT)",[]); //创建一个表，传参（传值），回调函数（执行成功后，可不写），回调函数（执行失败后，可不写）
+            var username=$("#txtUserName").val();
+            var pwd=$("#txtPwd").val();
+                
+                if(username==="" || pwd===""){
+                        alert("不能为空");
+                        
+                }else{
+                    fx.executeSql("insert into UserInfor values(?,?)",[username,pwd],function(){
+                    alert("添加成功")
+                    });
+                }
+            
+            });
+            }
+            function Sel(){
+                var sql="select * from UserInfor where 1=1"; //加where 1=1的目的，加上的话，不管下面if成不成立，这条执行语句都成立
+                var username=$("#txtSUserName").val();
+                if(username!=""){
+                sql += " and UserName='" + username +"'"; //例：username=aaaa select * from UserInfor where 1=1 and UserName='aaaa'
+                // console.log(sql)
+                }
+                db.transaction(function (fx) { //查询所有数据
+                $("#dCon").html("");
+                fx.executeSql(sql,[], function (fx,rs) {
+                for(var i=0;i< rs.rows.length;i++){
+                    if(username===rs.rows.item(i).UserName){
+                        alert("已经注册")   
+                    }else{
+                        
+                    }
+                    
+                }
+                });
+                });
+                }
+            
+           
+        </script>
+</body>
+</html>

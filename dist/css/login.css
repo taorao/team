@@ -1,0 +1,135 @@
+.loginheader div {
+  float: left; }
+  .loginheader div span {
+    color: #fff;
+    font-size: 20px; }
+
+.loginheader1 {
+  width: 20%; }
+  .loginheader1 span {
+    float: left;
+    line-height: 54px;
+    margin-left: 0.266rem; }
+  .loginheader1 i {
+    float: left;
+    line-height: 54px;
+    margin-left: 0.266rem; }
+
+.loginheader2 {
+  width: 60%; }
+
+.loginheader3 {
+  width: 20%; }
+
+.logincontent {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  height: 580px; }
+  .logincontent .logincontent1 {
+    line-height: 140px; }
+  .logincontent ul li {
+    width: 100%;
+    text-align: center;
+    font-size: 16px; }
+    .logincontent ul li div {
+      width: 80%;
+      margin: 0 auto;
+      line-height: 50px; }
+
+.logincontent1d {
+  height: 50px;
+  overflow: hidden;
+  background: #179500;
+  text-align: center; }
+  .logincontent1d img {
+    width: 20px;
+    height: 20px; }
+
+.logincontent1p {
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid #000;
+  line-height: 50px; }
+
+footer {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  text-align: center; }
+  footer p {
+    font-size: 18px;
+    color: #179500; }
+
+.logincontent2-2 {
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  height: 300px; }
+  .logincontent2-2 ul li {
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 1px solid #444;
+    margin-top: 20px; }
+    .logincontent2-2 ul li span {
+      color: #333;
+      font-size: 18px; }
+  .logincontent2-2 .blone {
+    display: none; }
+
+.logincontent1 {
+  display: block; }
+
+.logincontent2 {
+  display: none; }
+
+.logincontent3 {
+  width: 100%;
+  overflow: hidden;
+  background: #f0efed;
+  display: none; }
+  .logincontent3 .logincontent3-2 {
+    overflow: hidden;
+    margin-top: 0.266rem;
+    background: #fff; }
+    .logincontent3 .logincontent3-2 ol {
+      width: 100%;
+      margin-top: 0.266rem; }
+      .logincontent3 .logincontent3-2 ol li {
+        width: 33%;
+        float: left;
+        font-size: 18px; }
+      .logincontent3 .logincontent3-2 ol .active {
+        color: #179500; }
+  .logincontent3 .logincontent3-3 {
+    width: 100%;
+    overflow: hidden;
+    background: #fff; }
+    .logincontent3 .logincontent3-3 span {
+      font-size: 20px;
+      color: #666;
+      margin-left: 0.266rem; }
+    .logincontent3 .logincontent3-3 input {
+      width: 45%;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #666;
+      border: 1px solid #ccc; }
+    .logincontent3 .logincontent3-3 input[type=button] {
+      width: 100px;
+      border: none;
+      background: #06c1ae; }
+  .logincontent3 .logincontent3-4 {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0.532rem;
+    background: #fff;
+    text-align: center; }
+    .logincontent3 .logincontent3-4 input {
+      width: 90%;
+      background: #06c1ae;
+      border: 1px solid #ccc;
+      color: #ddd;
+      height: 1rem;
+      font-size: 20px; }

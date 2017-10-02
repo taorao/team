@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>登录</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div class="logincontent">
+        <div class="logincontent1">
+             <header class="loginheader">
+                <div class="loginheader1">
+                    <span>X</span>
+                </div>
+                <div class="loginheader2">
+                    <span>登录美团</span>
+                </div>
+                <div class="loginheader3">
+                    <span>注册</span>
+                </div>
+             </header>
+    
+            <ul>
+                <li>
+                    <p>推荐登录方式</p>
+                </li>
+                <li>
+                    <div class="logincontent1d">
+                        <img src="images/49-tencent-mm.png">
+                        <span>
+                            微信登录
+                        </span>
+                    </div>
+                    
+                </li>
+                <li>
+                    <p>或</p>
+                </li>
+                <li>
+                    <div class="logincontent1p">
+                        <p>使用手机号登录</p>
+                    </div>
+                </li>
+                <li>
+                    <span>使用其他方式登录</span>
+                </li>
+            </ul>
+        </div>
+        <div class="logincontent2">
+            <div class="logincontent2-1">
+                    <header class="loginheader">
+                        <div class="loginheader1">
+                           <i class="iconfont icon icon-zuo"></i>
+                        </div>
+                        <div class="loginheader2">
+                            <span>登录美团</span>
+                        </div>
+                        <div class="loginheader3">
+                            <span>注册</span>
+                        </div>
+                    </header>
+            </div>
+            <div class="logincontent2-2">
+                <form>
+                        <br /> <br />
+                        <ul>
+                            <li>
+                                
+                                <input id="private_phone" name="private_phone" pattern="^1(3|4|5|7|8)\d{9}$" required="required" type="text" placeholder="请输入手机号"/>  
+                                <span id="sps">X</span>
+                            </li>
+                            <li class="blone">
+                                <input type="password" placeholder="请输入密码" required="required">
+                            </li>
+                        </ul>
+                    
+                   <br /> <br />
+                    <input type="submit" onclick="Sel()" value="下一步">
+                </form>
+               
+            </div>
+        </div>
+        <div class="logincontent3">
+                <div class="logincontent3-1">
+                        <header class="loginheader">
+                                <div class="loginheader1">
+                                        <i class="iconfont icon icon-zuo"></i>
+                                </div>
+                                <div class="loginheader2">
+                                        <span style="color:#fff;font-size:18px;">注册</span>
+                                </div>
+                        </header>
+                </div>
+                <div class="logincontent3-2">
+                    <ol>
+                       
+                        <li class="active">1输入手机号&nbsp;&nbsp;></li>
+                        <li>2输入验证码&nbsp;&nbsp;></li>
+                        <li>3设置密码</li>
+                    </ol>
+                </div>
+                <form>
+                        <div class="logincontent3-3"> 
+                                <span>手机号:</span>
+                                <input id="txtUserName"  name="private_phone" pattern="^1(3|4|5|7|8)\d{9}$" required="required" type="text">
+                               
+                        </div>
+                        <div class="logincontent3-3">
+                                    <span>验证码:</span>
+                                    <input type="text">
+                                    <input type="button" value=" 发送验证码"> 
+                                    
+            
+                        </div>
+                        <div class="logincontent3-3">
+                                    <span>密码:&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                                    <input id="txtPwd" type="password">
+                                     
+                        </div>
+                        <div class="logincontent3-4">
+                                <input onclick="Add()" type="submit" value=" 注册"> 
+                        </div>
+                </form>
+                
+        </div>
+    </div>
+    <footer>
+        <div>
+            <p>登录代表你已同意<<美团网用户协议>></p>
+        </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script>
+        
+    
+    document.documentElement.style.fontSize=document.documentElement.clientWidth/10+"px";
+       
+              
+            $(".logincontent1p p").click(function(){
+                $(".logincontent1").css("display","none");
+                $(".logincontent2").css("display","block");
+                $(".icon-zuo").click(function(){
+                    $(".logincontent2").css("display","none");
+                     $(".logincontent1").css("display","block");
+
+                });
+                $(".loginheader3 span").click(function(){
+                    $(".logincontent2").css("display","none");
+                    $(".logincontent3").css("display","block");
+                    $(".icon-zuo").click(function(){
+                        $(".logincontent3").css("display","none");
+                        $(".logincontent2").css("display","block");
+                        $(".logincontent1").css("display","none");
+                        $(".icon-zuo").click(function(){
+                            $(".logincontent2").css("display","none");
+                            $(".logincontent3").css("display","none");
+                            $(".logincontent1").css("display","block");
+                        })
+                    })
+                })
+            })
+            $(".loginheader3 span").click(function(){
+                $(".logincontent1").css("display","none");
+                $(".logincontent3").css("display","block");
+                $(".icon-zuo").click(function(){
+                    $(".logincontent3").css("display","none");
+                     $(".logincontent1").css("display","block");
+                })
+            })
+            $(".loginheader1 span").click(function(){
+                location.href="me.html"
+            })
+            var db=openDatabase("myDB","1.0","test db",2014*10); //创建数据库对象； 数据库名称：myDB， 版本：1.0， 数据库的描述：test db，数据库的大小：2014*10
+            function Add(){
+            db.transaction(function(fx){
+            fx.executeSql("create table if not exists UserInfor(UserName TEXT,Pwd TEXT)",[]); //创建一个表，传参（传值），回调函数（执行成功后，可不写），回调函数（执行失败后，可不写）
+            var username=$("#txtUserName").val();
+            var pwd=$("#txtPwd").val();
+                
+                if(username==="" || pwd===""){
+                        alert("不能为空");
+                        
+                }else{
+                        
+                             fx.executeSql("insert into UserInfor values(?,?)",[username,pwd],function(){
+                                alert("添加成功")
+                            });    
+                }
+            
+            });
+            }
+            function Sel(){
+                var sql="select * from UserInfor where 1=1"; //加where 1=1的目的，加上的话，不管下面if成不成立，这条执行语句都成立
+                var username=$("#private_phone").val();
+                var blonepwp=$(".blone").val();
+                if(username!=""){
+                sql += " and UserName='" + username +"'"; //例：username=aaaa select * from UserInfor where 1=1 and UserName='aaaa'
+                // console.log(sql)
+                }
+                db.transaction(function (fx) { //查询所有数据
+              
+                fx.executeSql(sql,[], function (fx,rs) {
+                    for(var i=0;i< rs.rows.length;i++){
+                       
+                                if(username===rs.rows.item(i).UserName){
+
+                                    $(".blone").css("display","block")
+                                     alert("手机号输入正确")
+                                     if(blonepwp===rs.rows.item(i).Pwd){
+                                         alert("密码输入正确")
+                                    };
+                                }else if(username===""){
+                                    alert("手机号不能为空")
+                                }
+                               
+                                
+                    }
+                    
+                }); 
+                });
+                }
+            
+                $("#sps").click(function(){
+                    var s="";
+                    $("#private_phone").val(s)
+                })
+
+        
+        
+    </script>
+</body>
+</html> 

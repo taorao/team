@@ -1,0 +1,160 @@
+header .top {
+  width: 100%;
+  height: 45px;
+  overflow: hidden; }
+
+header .top span {
+  margin-left: 5px;
+  display: inline-block;
+  height: 30px;
+  font-size: 23px;
+  line-height: 54px;
+  color: #fff; }
+
+header .middle {
+  width: 100%;
+  overflow: hidden;
+  height: 40px;
+  border-bottom: 1px solid #aaaaaa;
+  box-shadow: 0px 7px 3px #888888; }
+
+header .middle h5 {
+  margin-left: 5px;
+  height: 40px;
+  line-height: 40px; }
+
+header .footer {
+  overflow: hidden;
+  padding: 10px 0;
+  margin-top: 10px;
+  width: 100%;
+  border-bottom: 10px solid #f2f2f2;
+  text-align: center; }
+
+header .footer span {
+  font-size: 13px; }
+
+header .footer .logo {
+  width: 60px;
+  height: 70px;
+  background: url(../images/logo.jpg);
+  margin: 0 auto; }
+
+/*
+ * section
+ */
+section .top {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  line-height: 40px;
+  border-bottom: 5px solid #f2f2f2;
+  background: #fff; }
+
+section .top span {
+  margin-left: 5px;
+  float: left;
+  font-size: 14px;
+  font-weight: 900; }
+
+section .top a {
+  margin-right: 5px;
+  font-size: 13px;
+  float: right; }
+
+a:hover {
+  cursor: pointer; }
+
+/*
+ *index1
+ */
+section .nav {
+  background: #fff; }
+
+section .nav ul {
+  width: 100%;
+  overflow: hidden;
+  text-align: center; }
+
+section .nav ul li {
+  width: 25%;
+  float: left;
+  background: #fff; }
+
+section .nav ul p {
+  font-size: 13px; }
+
+section .nav ul li i {
+  font-size: 30px; }
+
+.Recent_order {
+  margin: 7px 0;
+  padding-left: 5px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  background: #f2f2f2;
+  color: #8b8b8b; }
+
+.indent {
+  width: 100%;
+  overflow: hidden;
+  background: #fff; }
+
+.indent .box1 {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 5px;
+  border-bottom: 1px solid #e1e1e1; }
+
+.indent .box1 .left {
+  width: 19%; }
+
+.box1 div {
+  float: left; }
+
+.indent .box1 .left img {
+  width: 50px;
+  height: 50px; }
+
+.indent .box1 .middle {
+  width: 56%; }
+
+.indent .box1 .middle h4 {
+  margin-bottom: 5px; }
+
+.indent .box1 .middle p {
+  font-size: 13px;
+  color: #969696; }
+
+.indent .box1 .right {
+  width: 25%; }
+
+.indent .box1 .right h6 {
+  margin-left: 35px;
+  color: #6b9c96;
+  font-size: 13px; }
+
+.indent .box1 .right .estimate {
+  margin-top: 14px;
+  margin-left: 14px;
+  width: 58px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border: 1px solid #d7ab3e;
+  font-size: 13px;
+  color: #d7ab3e;
+  font-weight: 500; }
+
+.indent .more {
+  width: 100%;
+  overflow: hidden;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 13px;
+  color: #6b9c96;
+  border-bottom: 7px solid #f2f2f2; }
